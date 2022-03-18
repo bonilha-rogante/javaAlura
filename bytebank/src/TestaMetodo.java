@@ -14,13 +14,18 @@ public class TestaMetodo {
 		Conta contaDaFernanda = new Conta();
 		contaDaFernanda.depositar(1000);
 		
-		if(contaDaFernanda.transferir(300, contaDoGuilherme)) {
+		boolean sucessoTransferir = 
+				contaDaFernanda.transferir(300, contaDoGuilherme);
+		if(sucessoTransferir) {
 			System.out.println("Transferencia com sucesso");
 		}else {
 			System.out.println("Faltou Dinheiro");
 		}
 		System.out.println(contaDaFernanda.saldo);
 		System.out.println(contaDoGuilherme.saldo);
+		
+		contaDoGuilherme.titular = "Guilherme Bonilha";
+		System.out.println(contaDoGuilherme.titular);
 	}
 
 }
